@@ -16,13 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 const games = require('./data')
 const users = require('./users')
 
-app.get('/', (req, res) => res.render('index.ejs'))
-
-app.get('/home', (req, res) => {
-    res.render('home.ejs')
-})
-
 app.get('/register', (req, res) =>{
+    console.log(users)
    res.render('register.ejs')
 })
 
@@ -36,7 +31,7 @@ app.post('/register', (req, res) => {
         email,
         password,
         status : 'OFFLINE'
-    }
+    }  
 
     users.push(newUser)
 
@@ -45,13 +40,23 @@ app.post('/register', (req, res) => {
     res.send(users)
 })
 
+app.get('/login', (req, res) => {
+    console.log(users)
+    res.render('login.ejs')
+})
+
+app.put('/login', (req, res) => {
+    const {loginEmail, loginPassword} = req.body
+
+   
+    users.forEach(user => {
+        if(loginEmail === user.email && loginPassword === user.password){
+            user.status = 'ONLINE'
+        }
+    })
 
 
-
-
-
-
-
+})
 
 
 // LISTENING PORT SET UP

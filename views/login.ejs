@@ -23,30 +23,19 @@
 
     <section id="register" class="w-full h-screen flex justify-center items-center">
         <div id="register-form">
-            <h2>Sign up</h2>
+            <h2>Log in</h2>
             <div class="input-box">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
+                <label for="loginEmail">Email</label>
+                <input type="email" name="loginEmail" id="loginEmail">
             </div>
             <div class="input-box">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <label for="loginPassword">Password</label>
+                <input type="password" name="loginPassword" id="loginPassword">
             </div>
-            <div class="input-box">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </div>
-            <div class="input-box">
-                <label for="confirmation">Confirm password</label>
-                <input type="password" name="confirmation" id="confirmation">
-            </div>
-
-            <button id="register-btn">Register Now</button>
-            <p>Already have an account? <span><a href="/login">Login now</a></span></p>
-
+            <button id="login-btn">Log in</button>
         </div>
     </section>
-    <script type="module" src="/register.js"></script>
+    <script type="module" src="/login.js"></script>
 </body>
 
 </html>

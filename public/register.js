@@ -21,6 +21,8 @@ const getOptions = {
 const registerButton = document.querySelector('#register-btn')
 registerButton.addEventListener('click', register);
 
+
+
 function register(){
     const name = document.querySelector('#name').value
     const email = document.querySelector('#email').value
@@ -35,6 +37,12 @@ function register(){
     }
 
     fetch('/register', methodOptions(newUser, 'POST'))
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(e => console.log(e))
     console.log(name, email, password)
 
 }
+
+
+// test
